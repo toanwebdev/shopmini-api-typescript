@@ -1,0 +1,50 @@
+.productGroup {
+	&__item {
+		&__wrapper {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		border-right: 1px solid #f0f0f0;
+		border-top: 1px solid #f0f0f0;
+		border-bottom: 1px solid #f0f0f0;
+
+		&:first-child,
+		&:nth-child(6) {
+			border-left: 1px solid #f0f0f0;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+
+		&__more {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: 300px !important;
+			border: 1px solid #ccc;
+
+			margin: 40px 0;
+			font-size: 14px !important;
+			font-weight: 600 !important;
+			border-radius: 5px !important;
+			height: 45px !important;
+
+			&:hover {
+				color: white;
+				background-color: #288ad6 !important;
+				border-color: #288ad6 !important;
+			}
+
+			&__icon {
+				font-size: 11px;
+				margin-left: 5px;
+			}
+		}
+	}
+}

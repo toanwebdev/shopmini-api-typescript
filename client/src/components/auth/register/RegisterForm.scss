@@ -1,0 +1,35 @@
+.registerForm {
+	margin-top: 50px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__form {
+		margin-top: 20px;
+		width: 500px;
+
+		&__btn {
+			margin-top: 20px !important;
+			height: 40px !important;
+		}
+	}
+
+	&__login {
+		font-size: 15px;
+		margin-top: 50px;
+
+		&__link {
+			color: unset;
+			text-decoration: none;
+			font-size: 15px;
+
+			margin-left: 10px;
+			transition: color 0.2s ease-in-out;
+
+			&:hover {
+				color: #3361f8;
+			}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+.header {
+	background-color: black;
+	height: 60px;
+	padding: 0px 250px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__left {
+		display: flex;
+		align-items: center;
+
+		&__logo {
+			color: #f15a25;
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		&__search {
+			background-color: white;
+			margin-left: 80px;
+			border-radius: 5px;
+			position: relative;
+
+			&__input {
+				width: 350px;
+			}
+
+			&__icon {
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				height: 40px;
+				width: 40px;
+				font-size: 25px;
+				color: #999;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+
+	&__right {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 450px;
+
+		&__user {
+			display: flex;
+			align-items: center;
+
+			&__name {
+				color: white;
+				margin-right: 20px;
+			}
+
+			&__menu__icon {
+				font-size: 20px;
+				color: #555;
+			}
+		}
+
+		&__btn {
+			color: white !important;
+			border-color: white !important;
+			text-transform: none !important;
+			margin-left: 20px !important;
+			transition: all 0.2s ease-in-out !important;
+
+			&:hover {
+				color: #f15a25 !important;
+				border-color: #f15a25 !important;
+			}
+		}
+	}
+}
