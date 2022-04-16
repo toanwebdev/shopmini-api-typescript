@@ -65,7 +65,9 @@ const Header = () => {
 	return (
 		<Box className='header'>
 			<Box className='header__left'>
-				<span className='header__left__logo'>Shopmini</span>
+				<Link to='/' className='header__left__logo'>
+					Shopmini
+				</Link>
 
 				{/* tìm kiếm */}
 				<Box className='header__left__search'>

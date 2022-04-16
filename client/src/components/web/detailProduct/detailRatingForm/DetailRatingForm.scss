@@ -1,0 +1,166 @@
+.detailRatingForm {
+	margin-top: 50px;
+
+	&__title {
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	&__table {
+		margin-top: 20px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+
+		&__title {
+			padding: 20px;
+			border-bottom: 1px solid #ccc;
+			background-color: #f5f5f5;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&__rate {
+				&__avg {
+					color: #f15a25;
+					font-size: 25px;
+					font-weight: 600;
+					padding-right: 20px;
+					border-right: 1px solid #ccc;
+				}
+
+				margin-left: 20px;
+				font-size: 14px;
+			}
+		}
+
+		&__content {
+			padding: 20px;
+
+			&__item {
+				display: flex;
+				align-items: center;
+				margin: 5px 0px;
+
+				&__icon {
+					font-size: 14px;
+					margin-left: 5px;
+					color: #faaf00;
+				}
+
+				&__box {
+					&__wrapper {
+						height: 10px;
+						width: calc(100% - 80px);
+						margin: 0px 10px;
+
+						border-radius: 3px;
+						background-color: #f5f5f5;
+						position: relative;
+					}
+
+					position: absolute;
+					z-index: 99;
+					top: 0px;
+					left: 0px;
+
+					height: 10px;
+					background-color: #f15a25;
+					border-radius: 3px;
+				}
+			}
+
+			&__rateBtn {
+				&__wrapper {
+					margin-top: 40px;
+					display: flex;
+					justify-content: center;
+				}
+
+				text-transform: none !important;
+				background-color: #f15a25 !important;
+			}
+
+			&__modal {
+				&__wrapper {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					min-height: 100vh;
+				}
+
+				background-color: white;
+				border-radius: 5px;
+				width: 700px;
+
+				&__title {
+					padding: 10px 20px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					border-bottom: 1px solid #ccc;
+
+					& span {
+						font-size: 18px;
+						font-weight: 600;
+					}
+
+					& i {
+						font-size: 25px;
+						cursor: pointer;
+					}
+				}
+
+				&__form {
+					padding: 20px;
+
+					&__product {
+						display: flex;
+						align-items: center;
+
+						& img {
+							width: 70px;
+							height: 70px;
+							margin-right: 20px;
+						}
+					}
+
+					&__rating {
+						margin-top: 20px;
+						display: flex;
+
+						&__text {
+							margin-right: 20px;
+						}
+					}
+
+					&__comment {
+						margin-top: 20px;
+
+						&__uploadBtn {
+							margin-top: 20px !important;
+							text-transform: none !important;
+						}
+					}
+
+					&__info {
+						margin-top: 20px;
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+						grid-gap: 20px;
+					}
+
+					&__btn {
+						&__wrapper {
+							margin-top: 20px;
+							display: flex;
+							justify-content: center;
+						}
+
+						text-transform: none !important;
+					}
+				}
+			}
+		}
+	}
+}

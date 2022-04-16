@@ -72,7 +72,7 @@ const Featured = ({
 								<ProductItem
 									product={item}
 									borderRadius='5px'
-									rate={4}
+									rate={4.5}
 									rateTotal={100}
 								/>
 							</Box>

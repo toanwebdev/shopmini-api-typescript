@@ -5,14 +5,16 @@ import './ProductGroup.scss'
 
 interface IProductGroupProps {
 	products: Product[]
-	productTotal?: number
+	moreTotal?: number
 	button?: boolean
 }
 
-const ProductGroup = ({ products, productTotal, button }: IProductGroupProps) => {
+const ProductGroup = ({ products, moreTotal, button }: IProductGroupProps) => {
 	return (
 		<Box className='productGroup'>
-			<Box className='productGroup__item__wrapper'>
+			<Box
+				className='productGroup__item__wrapper'
+				sx={{ gridTemplateRows: `repeat(${products.length / 5}, 1fr)` }}>
 				{products.map((item) => (
 					<Box key={item.id} className='productGroup__item'>
 						<ProductItem product={item} />
@@ -21,10 +23,9 @@ const ProductGroup = ({ products, productTotal, button }: IProductGroupProps) =>
 			</Box>
 
 			{button ? (
-				<Box className='productGroup__btn'>
-					<Button variant='contained' className='productGroup__btn__more'>
-						<span>Xem thêm {productTotal} sản phẩm</span>
-						<i className='bx bxs-down-arrow productGroup__btn__more__icon'></i>
+				<Box className='productGroup__btn__wrapper'>
+					<Button variant='outlined' className='productGroup__btn'>
+						Xem thêm {moreTotal} sản phẩm
 					</Button>
 				</Box>
 			) : (

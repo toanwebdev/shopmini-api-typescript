@@ -1,5 +1,5 @@
 import { Box, Divider } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './MenuBar.scss'
 
 interface IMenu {
@@ -10,6 +10,8 @@ interface IMenu {
 }
 
 const MenuBar = () => {
+	const location = useLocation()
+
 	const menus: IMenu[] = [
 		{
 			id: 1,
@@ -56,7 +58,11 @@ const MenuBar = () => {
 					<Link
 						key={`menu-${menu.id}`}
 						to={menu.slug}
-						className='menuBar__menu__item'>
+						className={`menuBar__menu__item ${
+							location.pathname === menu.slug
+								? 'menuBar__menu__item__active'
+								: ''
+						}`}>
 						<>
 							<i className={`${menu.icon} menuBar__menu__item__icon`}></i>
 							<span>{menu.name}</span>

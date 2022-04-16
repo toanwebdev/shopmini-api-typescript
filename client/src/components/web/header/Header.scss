@@ -13,9 +13,10 @@
 
 		&__logo {
 			color: #f15a25;
-			font-size: 18px;
+			font-size: 20px;
 			font-weight: 600;
 			text-transform: uppercase;
+			text-decoration: none;
 		}
 
 		&__search {
@@ -57,7 +58,7 @@
 
 			&__name {
 				color: white;
-				margin-right: 20px;
+				margin-right: 10px;
 			}
 
 			&__menu__icon {

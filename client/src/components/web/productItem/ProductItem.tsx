@@ -71,7 +71,13 @@ const ProductItem = ({
 
 				{rate && rate !== 0 && (
 					<Box className='productItem__rate'>
-						<Rating name='read-only' value={rate} readOnly size='small' />
+						<Rating
+							name='read-only'
+							value={rate}
+							readOnly
+							precision={0.5}
+							size='small'
+						/>
 						<Box>
 							<span className='productItem__rate__total'>
 								{numberWithCommas(rateTotal as number)}

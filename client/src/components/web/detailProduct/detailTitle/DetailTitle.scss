@@ -1,0 +1,28 @@
+.detailTitle {
+	display: flex;
+	align-items: center;
+
+	margin-top: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+
+	&__name {
+		text-transform: capitalize;
+		font-weight: 600;
+		font-size: 18px;
+	}
+
+	&__rate {
+		display: flex;
+		align-items: center;
+		font-size: 15px;
+		margin-left: 20px;
+
+		&__total {
+			font-weight: 500;
+			margin-left: 10px;
+			color: #f15a25;
+			font-weight: 600;
+		}
+	}
+}

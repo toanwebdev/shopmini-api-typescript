@@ -1,6 +1,7 @@
 import { Box, CircularProgress, Container } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 import { useAppSelector } from '../../app/hook'
+import Footer from '../../components/web/footer/Footer'
 import Header from '../../components/web/header/Header'
 import MenuBar from '../../components/web/menuBar/MenuBar'
 
@@ -28,6 +29,7 @@ const Layout = () => {
 			<Container style={{ maxWidth: '1200px !important' }}>
 				<Outlet />
 			</Container>
+			<Footer />
 		</Box>
 	)
 }
