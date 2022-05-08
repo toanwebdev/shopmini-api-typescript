@@ -39,7 +39,7 @@ const LoginForm = () => {
 		dispatch(loginStart())
 		try {
 			const data = await authApi.loginUser(values)
-			dispatch(loginSuccess())
+			dispatch(loginSuccess(data.user as User))
 			JWTManager.setToken(data.accessToken)
 			navigate('/')
 		} catch (error) {

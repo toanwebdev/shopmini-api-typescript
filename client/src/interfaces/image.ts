@@ -1,5 +1,7 @@
 export interface Image {
-	id: number
+	id?: string
 	link: string
 	name: string
+	productId?: number
+	colorId?: number
 }

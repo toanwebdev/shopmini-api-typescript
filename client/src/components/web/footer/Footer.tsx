@@ -115,17 +115,17 @@ const Footer = () => {
 
 	const payments: Image[] = [
 		{
-			id: 1,
+			id: '1',
 			link: 'https://stcv4.hnammobile.com/v7/images/icon/master_card.svg',
 			name: 'sahhdjas',
 		},
 		{
-			id: 2,
+			id: '2',
 			link: 'https://stcv4.hnammobile.com/v7/images/icon/visa.svg',
 			name: 'askjdkas',
 		},
 		{
-			id: 3,
+			id: '3',
 			link: 'https://stcv4.hnammobile.com/v7/images/icon/momo.svg',
 			name: 'asdikasd',
 		},

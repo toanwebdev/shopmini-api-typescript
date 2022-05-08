@@ -1,0 +1,60 @@
+.uploadFile {
+	&__image {
+		&__wrapper {
+			position: relative;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+
+			&:hover {
+				.uploadFile__image__close__wrapper {
+					opacity: 1;
+				}
+			}
+		}
+
+		width: 100%;
+		object-fit: contain;
+
+		&__close {
+			&__wrapper {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+
+				opacity: 0;
+				transition: opacity 0.3s ease-in-out;
+			}
+
+			position: absolute;
+			top: 5px;
+			right: 5px;
+
+			font-size: 30px;
+			color: white;
+			cursor: pointer;
+		}
+	}
+
+	&__upload {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		border: 2px dashed #4278ff;
+		border-radius: 5px;
+		cursor: pointer;
+
+		& i {
+			color: #4278ff;
+		}
+
+		& p {
+			color: #4278ff;
+		}
+	}
+}

@@ -7,14 +7,13 @@ import {
 	RadioGroup,
 } from '@mui/material'
 import { useState } from 'react'
-import { Color } from '../../../../interfaces/color'
 import numberWithCommas from '../../../../utils/numberWithCommas'
 import './DetailPayment.scss'
 
 interface IDetailPaymentProps {
 	price: number
 	installment?: boolean
-	colors: Color[]
+	colors: any[]
 }
 
 const DetailPayment = ({ price, installment, colors }: IDetailPaymentProps) => {

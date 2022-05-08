@@ -1,5 +1,6 @@
 export interface Specifications {
-	id: number
+	id?: string
 	name: string
-	value: string
+	content: string
+	productId?: number
 }

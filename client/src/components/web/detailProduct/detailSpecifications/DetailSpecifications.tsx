@@ -33,7 +33,7 @@ const DetailSpecifications = ({
 												: ''
 										}`}>
 										<span>{specifications.name}:</span>
-										<span>{specifications.value}</span>
+										<span>{specifications.content}</span>
 									</Box>
 								) : null}
 							</>
@@ -46,7 +46,7 @@ const DetailSpecifications = ({
 										: ''
 								}`}>
 								<span>{specifications.name}:</span>
-								<span>{specifications.value}</span>
+								<span>{specifications.content}</span>
 							</Box>
 						)}
 					</Box>

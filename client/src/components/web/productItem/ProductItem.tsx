@@ -52,20 +52,20 @@ const ProductItem = ({
 
 				{product.priceDiscount !== 0 && (
 					<Box className='productItem__priceDiscount'>
-						{numberWithCommas(product.priceDiscount)}₫
+						{numberWithCommas(product.priceDiscount as number)}₫
 					</Box>
 				)}
 
 				<Box>
 					<span className='productItem__price'>
-						{numberWithCommas(product.price)}
+						{numberWithCommas(product.price as number)}
 					</span>
 					₫
 				</Box>
 
 				{product.gift !== 0 && (
 					<Box className='productItem__gift'>
-						Quà {numberWithCommas(product.gift)}₫
+						Quà {numberWithCommas(product.gift as number)}₫
 					</Box>
 				)}
 

@@ -27,7 +27,7 @@ const FilterProduct = ({
 	filters,
 	products,
 }: IFilterProductProps) => {
-	const [brandActive, setBrandActive] = useState(-1)
+	const [brandActive, setBrandActive] = useState('-1')
 	const [showFilter, setShowFilter] = useState(false)
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 	const [filterLabel, setFilterLabel] = useState('Sắp xếp theo')

@@ -1,5 +1,10 @@
-export interface Color {
-	id: number
-	name: string
+export interface ProductColor {
+	colorId: number
+	productId: number
 	avatar: string
+}
+
+export interface Color {
+	id: string
+	name: string
 }

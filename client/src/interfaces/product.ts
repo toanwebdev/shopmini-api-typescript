@@ -1,15 +1,21 @@
 export interface Product {
-	id?: number
+	id?: string
 	avatar: string
 	name: string
-	priceImport: number
-	price: number
-	priceDiscount: number
-	gift: number
+	priceImport?: number | string
+	price?: number | string
+	priceDiscount?: number | string
+	gift?: number | string
 	installment: boolean
 	new: boolean
 	discount: boolean
 	slug: string
+	quantity: number
+	description: string
+	categoryId?: number | string
+	brandId?: number | string
+	userCreatedId?: number | string
+	userUpdatedId?: number | string
 }
 
 export interface ProductName {

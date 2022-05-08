@@ -1,6 +1,7 @@
 import {
 	Box,
 	Button,
+	IconButton,
 	Input,
 	Modal,
 	Rating,
@@ -113,9 +114,9 @@ const DetailRatingForm = ({
 						<Box className='detailRatingForm__table__content__modal'>
 							<Box className='detailRatingForm__table__content__modal__title'>
 								<span>Đánh giá sản phẩm</span>
-								<i
-									className='bx bx-message-square-x'
-									onClick={() => setOpenRatingModal(false)}></i>
+								<IconButton onClick={() => setOpenRatingModal(false)}>
+									<i className='bx bx-message-square-x'></i>
+								</IconButton>
 							</Box>
 
 							<Box className='detailRatingForm__table__content__modal__form'>

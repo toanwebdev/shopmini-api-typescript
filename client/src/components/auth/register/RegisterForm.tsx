@@ -53,7 +53,7 @@ const RegisterForm = () => {
 		dispatch(registerStart())
 		try {
 			const data = await authApi.registerUser(values)
-			dispatch(registerSuccess())
+			dispatch(registerSuccess(data.user as User))
 			JWTManager.setToken(data.accessToken)
 			navigate('/')
 		} catch (error) {

@@ -1,9 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { User } from '../interfaces'
 
 // Define a type for the slice state
 interface AuthState {
 	isLoading: boolean
 	isAuthenticated: boolean
+	user: User | null
 	isError: boolean
 }
 
@@ -11,6 +13,7 @@ interface AuthState {
 const initialState: AuthState = {
 	isLoading: false,
 	isAuthenticated: false,
+	user: null,
 	isError: false,
 }
 
@@ -22,28 +25,32 @@ export const authSlice = createSlice({
 		registerStart: (state) => {
 			state.isLoading = true
 		},
-		registerSuccess: (state) => {
+		registerSuccess: (state, action: PayloadAction<User>) => {
 			state.isLoading = false
 			state.isAuthenticated = true
+			state.user = action.payload
 			state.isError = false
 		},
 		registerFailed: (state) => {
 			state.isLoading = false
 			state.isAuthenticated = false
+			state.user = null
 			state.isError = true
 		},
 
 		loginStart: (state) => {
 			state.isLoading = true
 		},
-		loginSuccess: (state) => {
+		loginSuccess: (state, action: PayloadAction<User>) => {
 			state.isLoading = false
 			state.isAuthenticated = true
+			state.user = action.payload
 			state.isError = false
 		},
 		loginFailed: (state) => {
 			state.isLoading = false
 			state.isAuthenticated = false
+			state.user = null
 			state.isError = true
 		},
 
@@ -53,6 +60,7 @@ export const authSlice = createSlice({
 		logoutSuccess: (state) => {
 			state.isLoading = false
 			state.isAuthenticated = false
+			state.user = null
 			state.isError = false
 		},
 		logoutFailed: (state) => {

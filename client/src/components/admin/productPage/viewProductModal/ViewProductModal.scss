@@ -1,0 +1,33 @@
+.viewProductModal {
+	&__modal {
+		&__wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+
+		height: 700px;
+		width: 1000px;
+		background-color: white;
+		border-radius: 5px;
+
+		&__title {
+			padding: 10px 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid #ccc;
+
+			& span {
+				font-size: 18px;
+				font-weight: 600;
+			}
+
+			& button {
+				font-size: 22px !important;
+				color: unset !important;
+			}
+		}
+	}
+}

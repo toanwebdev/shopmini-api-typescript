@@ -1,4 +1,11 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {
+	BaseEntity,
+	Column,
+	Entity,
+	OneToMany,
+	PrimaryGeneratedColumn,
+} from 'typeorm'
+import { Product } from './Product'
 
 @Entity()
 export class User extends BaseEntity {
@@ -19,4 +26,16 @@ export class User extends BaseEntity {
 
 	@Column({ default: 0 })
 	tokenVersion!: number
+
+	@OneToMany(
+		(_to) => Product,
+		(product_created) => product_created.user_created,
+	)
+	product_createds: Product[]
+
+	@OneToMany(
+		(_to) => Product,
+		(product_updated) => product_updated.user_updated,
+	)
+	product_updateds: Product[]
 }

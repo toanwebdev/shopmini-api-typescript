@@ -12,11 +12,19 @@ interface InputFieldProps {
 	value?: string | number
 	fullWidth?: boolean
 	autoFocus?: boolean
+	onChange?: any
 }
 
-const InputField = ({ textarea, ...props }: InputFieldProps) => {
+const InputField = ({ textarea, onChange, ...props }: InputFieldProps) => {
 	const [field, { error, touched }] = useField(props)
 	const [onShow, setOnShow] = useState(false)
+
+	const handleChange = (e: any) => {
+		if (onChange) {
+			onChange(e)
+		}
+		field.onChange(e)
+	}
 
 	let body
 	if (textarea) {
@@ -31,6 +39,7 @@ const InputField = ({ textarea, ...props }: InputFieldProps) => {
 					{...field}
 					id={field.name}
 					{...props}
+					onChange={handleChange}
 					type={
 						props.type === 'password'
 							? `${onShow ? 'text' : 'password'}`

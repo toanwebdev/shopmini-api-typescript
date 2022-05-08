@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import Featured from '../../components/web/home/featured/Featured'
 import SliderProduct from '../../components/web/home/sliderProduct/SliderProduct'
-import { Product, ProductName } from '../../interfaces'
+import { ProductName } from '../../interfaces'
 
 const Home = () => {
 	const phoneFeaturedNames: ProductName[] = [
@@ -24,7 +24,7 @@ const Home = () => {
 
 	const phoneFeaturedTotal = 174
 
-	const phoneFeaturedProducts: Product[] = [
+	const phoneFeaturedProducts: any[] = [
 		{
 			id: 1,
 			avatar:
@@ -38,6 +38,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 2,
@@ -52,6 +54,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 3,
@@ -66,6 +70,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 4,
@@ -80,6 +86,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 5,
@@ -94,6 +102,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 6,
@@ -108,6 +118,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 7,
@@ -122,6 +134,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 8,
@@ -136,6 +150,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 9,
@@ -150,6 +166,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 10,
@@ -164,6 +182,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 	]
 
@@ -182,7 +202,7 @@ const Home = () => {
 
 	const macLapFeaturedTotal = 199
 
-	const macLapFeaturedProducts: Product[] = [
+	const macLapFeaturedProducts: any[] = [
 		{
 			id: 1,
 			avatar:
@@ -196,6 +216,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 2,
@@ -210,6 +232,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 3,
@@ -224,6 +248,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 4,
@@ -238,6 +264,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 5,
@@ -252,6 +280,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 6,
@@ -266,6 +296,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 7,
@@ -280,6 +312,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 8,
@@ -294,6 +328,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 	]
 
@@ -327,7 +363,7 @@ const Home = () => {
 
 	const accessoryFeaturedTotal = 555
 
-	const accessoryFeaturedProducts: Product[] = [
+	const accessoryFeaturedProducts: any[] = [
 		{
 			id: 1,
 			avatar:
@@ -341,6 +377,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 2,
@@ -355,6 +393,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 3,
@@ -369,6 +409,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 4,
@@ -383,6 +425,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 5,
@@ -397,6 +441,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 6,
@@ -411,6 +457,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 7,
@@ -425,6 +473,8 @@ const Home = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 8,
@@ -439,6 +489,8 @@ const Home = () => {
 			new: false,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 	]
 

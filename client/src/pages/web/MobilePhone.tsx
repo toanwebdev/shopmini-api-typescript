@@ -1,40 +1,33 @@
 import { Box } from '@mui/material'
 import BreadcrumbsPath from '../../components/web/breadcrumbsPath/BreadcrumbsPath'
-import {
-	Brand,
-	Breadcrumb,
-	Filter,
-	Price,
-	Product,
-	Image,
-} from '../../interfaces'
 import FilterProduct from '../../components/web/filterProduct/FilterProduct'
 import SliderMini from '../../components/web/sliderMini/SliderMini'
+import { Brand, Breadcrumb, Filter, Image, Price } from '../../interfaces'
 
 const MobilePhone = () => {
 	const mobiSliders: Image[] = [
 		{
-			id: 1,
+			id: '1',
 			link: 'https://stcv4.hnammobile.com/uploads/optimized/banner/reno7-sieu-hot-chi-voi-10-490-000d-1003849.png?v=1649732402',
 			name: 'Reno7 Siêu Hot Chỉ Với 10.490.000đ',
 		},
 		{
-			id: 2,
+			id: '2',
 			link: 'https://stcv4.hnammobile.com/uploads/optimized/banner/dot-pha-bat-ngo-mi-11-gia-chi-3-999-000d-1003753.png?v=1648873442',
 			name: 'Đột Phá Bất Ngờ - Mi 11 Giá Chỉ 3.999.000đ',
 		},
 		{
-			id: 3,
+			id: '3',
 			link: 'https://stcv4.hnammobile.com/uploads/optimized/banner/sale-tung-bung-mung-dai-le-1003880.png?v=1649414343?v=1648873442',
 			name: 'Sale Tưng Bừng - Mừng Đại Lễ',
 		},
 		{
-			id: 4,
+			id: '4',
 			link: 'https://stcv4.hnammobile.com/uploads/optimized/banner/samsung-galaxy-a73-ruc-net-nguyen-ban-1003881.png?v=1649736543',
 			name: 'Samsung Galaxy A73 - Rực Nét Nguyên Bản',
 		},
 		{
-			id: 5,
+			id: '5',
 			link: 'https://stcv4.hnammobile.com/uploads/optimized/banner/dot-pha-bat-ngo-mi-11-gia-chi-3-999-000d-1003753.png?v=1648873442',
 			name: 'Đột Phá Bất Ngờ - Mi 11 Giá Chỉ 3.999.000đ',
 		},
@@ -55,24 +48,24 @@ const MobilePhone = () => {
 
 	const mobiBrands: Brand[] = [
 		{
-			id: 1,
+			id: '1',
 			name: 'iPhone',
 			avatar:
 				'https://stcv4.hnammobile.com/uploads/data/apple-iphone-1600080003.png?v=1631585173',
 		},
 		{
-			id: 2,
+			id: '2',
 			name: 'samsung',
 			avatar:
 				'https://stcv4.hnammobile.com/uploads/data/samsung1600079942.png?v=1600079942',
 		},
 		{
-			id: 3,
+			id: '3',
 			name: 'oppo',
 			avatar: 'https://stcv4.hnammobile.com/uploads/data/oppo.png?v=1600078879',
 		},
 		{
-			id: 4,
+			id: '4',
 			name: 'xiaomi',
 			avatar:
 				'https://stcv4.hnammobile.com/uploads/data/xiaomi.png?v=1600078869',
@@ -145,7 +138,7 @@ const MobilePhone = () => {
 		},
 	]
 
-	const mobiProducts: Product[] = [
+	const mobiProducts: any[] = [
 		{
 			id: 1,
 			avatar:
@@ -159,6 +152,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 2,
@@ -173,6 +168,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 3,
@@ -187,6 +184,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 4,
@@ -201,6 +200,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 5,
@@ -215,6 +216,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 6,
@@ -229,6 +232,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 7,
@@ -243,6 +248,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 8,
@@ -257,6 +264,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 9,
@@ -271,6 +280,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 		{
 			id: 10,
@@ -285,6 +296,8 @@ const MobilePhone = () => {
 			new: true,
 			gift: 1880000,
 			slug: '',
+			quantity: 2,
+			description: '',
 		},
 	]
 

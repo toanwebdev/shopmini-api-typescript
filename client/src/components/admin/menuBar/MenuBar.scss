@@ -1,0 +1,60 @@
+.menuBar__admin {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	min-height: 100vh;
+	width: calc(100% / 6);
+	position: fixed;
+	top: 0;
+
+	&__logo {
+		&__wrapper {
+			margin: 10px;
+			margin-left: 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		color: #f15a25;
+		font-size: 22px;
+		font-weight: 600;
+
+		text-transform: uppercase;
+		text-decoration: none;
+
+		&__activeMenu {
+			font-size: 30px;
+		}
+	}
+
+	&__menu {
+		&__item {
+			text-decoration: none !important;
+			color: #656565 !important;
+
+			&__icon {
+				font-size: 25px;
+			}
+
+			& .MuiListItemButton-root {
+				border-radius: 0px 150px 150px 0px !important;
+				width: 90% !important;
+			}
+
+			&__active {
+				& .MuiListItemButton-root {
+					box-shadow: rgba(58, 53, 65, 0.42) 0px 4px 8px -4px;
+					background-image: linear-gradient(
+						98deg,
+						rgb(198, 167, 254),
+						rgb(145, 85, 253) 94%
+					);
+					color: white;
+
+					& .MuiListItemIcon-root {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}

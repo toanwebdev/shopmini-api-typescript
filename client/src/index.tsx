@@ -5,6 +5,7 @@ import App from './App'
 import { store } from './app/store'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
+import 'react-toastify/dist/ReactToastify.css'
 
 ReactDOM.render(
 	<React.StrictMode>

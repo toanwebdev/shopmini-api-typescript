@@ -2,12 +2,11 @@ import { Box } from '@mui/material'
 import { useRef, useState } from 'react'
 import Slider from 'react-slick'
 import { Image } from '../../../../interfaces'
-import { Color } from '../../../../interfaces/color'
 import './DetailSlider.scss'
 
 interface IDetailSliderProps {
 	imgs: Image[]
-	colors: Color[]
+	colors: any[]
 }
 
 const DetailSlider = ({ imgs, colors }: IDetailSliderProps) => {

@@ -1,0 +1,25 @@
+.tableTop__admin {
+	display: grid;
+	grid-template-columns: 1.5fr 2fr;
+	grid-gap: 20px;
+
+	height: 350px;
+	margin-top: 40px;
+
+	&__table {
+		background-color: white;
+		border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		padding: 20px;
+
+		&__title {
+			font-size: 16px;
+			font-weight: 600;
+			margin-bottom: 25px;
+		}
+
+		&__content {
+			height: 320px !important;
+		}
+	}
+}

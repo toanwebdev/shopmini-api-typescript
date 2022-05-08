@@ -52,10 +52,10 @@ const JWTManager = () => {
 	}
 
 	const setRefreshTokenTimeout = (delay: number) => {
-		// 5s before token expires
+		// 1m before token expires
 		refreshTokenTimeoutId = window.setTimeout(
 			getRefreshToken,
-			delay * 1000 - 5000,
+			delay * 1000 - 60000,
 		)
 	}
 

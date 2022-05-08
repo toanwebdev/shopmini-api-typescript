@@ -8,7 +8,6 @@ import DetailSlider from '../../components/web/detailProduct/detailSlider/Detail
 import DetailSpecifications from '../../components/web/detailProduct/detailSpecifications/DetailSpecifications'
 import DetailTitle from '../../components/web/detailProduct/detailTitle/DetailTitle'
 import { Breadcrumb, Image, Rate, Specifications } from '../../interfaces'
-import { Color } from '../../interfaces/color'
 
 const DetailMobiPhone = () => {
 	const product = {
@@ -46,28 +45,28 @@ const DetailMobiPhone = () => {
 
 	const detailImgs: Image[] = [
 		{
-			id: 1,
+			id: '1',
 			link: '//cdn.tgdd.vn/Products/Images/42/267871/xiaomi-redmi-note-11s-1-5.jpg',
 			name: 'Xiaomi Redmi Note 11S',
 		},
 		{
-			id: 2,
+			id: '2',
 			link: '//cdn.tgdd.vn/Products/Images/42/267871/xiaomi-redmi-note-11s-2-4.jpg',
 			name: 'Xiaomi Redmi Note 11S',
 		},
 		{
-			id: 3,
+			id: '3',
 			link: '//cdn.tgdd.vn/Products/Images/42/267871/xiaomi-redmi-note-11s-3-4.jpg',
 			name: 'Xiaomi Redmi Note 11S',
 		},
 		{
-			id: 4,
+			id: '4',
 			link: '//cdn.tgdd.vn/Products/Images/42/267871/xiaomi-redmi-note-11s-4-3.jpg',
 			name: 'Xiaomi Redmi Note 11S',
 		},
 	]
 
-	const detailColors: Color[] = [
+	const detailColors: any[] = [
 		{
 			id: 1,
 			name: 'Bạc',
@@ -87,49 +86,49 @@ const DetailMobiPhone = () => {
 
 	const specificationsArray: Specifications[] = [
 		{
-			id: 1,
+			id: '1',
 			name: 'Màn hình',
-			value: 'AMOLED, 6.43", Full HD+',
+			content: 'AMOLED, 6.43", Full HD+',
 		},
 		{
-			id: 2,
+			id: '2',
 			name: 'Hệ điều hành',
-			value: 'Android 11',
+			content: 'Android 11',
 		},
 		{
-			id: 3,
+			id: '3',
 			name: 'Camera sau',
-			value: 'Chính 64 MP & Phụ 2 MP, 2 MP',
+			content: 'Chính 64 MP & Phụ 2 MP, 2 MP',
 		},
 		{
-			id: 4,
+			id: '4',
 			name: 'Camera trước',
-			value: '16 MP',
+			content: '16 MP',
 		},
 		{
-			id: 5,
+			id: '5',
 			name: 'Chip',
-			value: 'Snapdragon 695 5G 8 nhân',
+			content: 'Snapdragon 695 5G 8 nhân',
 		},
 		{
-			id: 6,
+			id: '6',
 			name: 'RAM',
-			value: '8 GB',
+			content: '8 GB',
 		},
 		{
-			id: 7,
+			id: '7',
 			name: 'Bộ nhớ trong',
-			value: '128 GB',
+			content: '128 GB',
 		},
 		{
-			id: 8,
+			id: '8',
 			name: 'SIM',
-			value: ' 2 Nano SIM (SIM 2 chung khe thẻ nhớ), Hỗ trợ 5G ',
+			content: ' 2 Nano SIM (SIM 2 chung khe thẻ nhớ), Hỗ trợ 5G ',
 		},
 		{
-			id: 9,
+			id: '9',
 			name: 'Pin, Sạc',
-			value: ' 4500 mAh, 33 W ',
+			content: ' 4500 mAh, 33 W ',
 		},
 	]
 

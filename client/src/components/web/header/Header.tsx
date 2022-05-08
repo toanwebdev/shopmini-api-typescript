@@ -3,32 +3,30 @@ import {
 	Box,
 	Button,
 	IconButton,
+	InputAdornment,
 	ListItemIcon,
 	Menu,
 	MenuItem,
 	TextField,
 	Tooltip,
 } from '@mui/material'
-import { MouseEvent, useEffect, useState } from 'react'
+import { MouseEvent, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import authApi from '../../../api/authApi'
-import userApi from '../../../api/userApi'
 import { useAppDispatch, useAppSelector } from '../../../app/hook'
-import { User } from '../../../interfaces'
 import {
 	logoutFailed,
 	logoutStart,
 	logoutSuccess,
 } from '../../../slices/authSlice'
-import { callApiEnd, callApiStart } from '../../../slices/callApiSlice'
 import JWTManager from '../../../utils/jwt'
 import './Header.scss'
 
 const Header = () => {
 	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
-	const [user, setUser] = useState<User | null>(null)
 	const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated)
+	const user = useAppSelector((state) => state.auth.user)
 
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 	const open = Boolean(anchorEl)
@@ -51,17 +49,6 @@ const Header = () => {
 		}
 	}
 
-	useEffect(() => {
-		dispatch(callApiStart())
-		const getUserById = async () => {
-			const data = await userApi.getUserById(JWTManager.getUserId() as number)
-			dispatch(callApiEnd())
-			setUser(data)
-		}
-		getUserById()
-		dispatch(callApiEnd())
-	}, [dispatch, isAuthenticated])
-
 	return (
 		<Box className='header'>
 			<Box className='header__left'>
@@ -70,17 +57,20 @@ const Header = () => {
 				</Link>
 
 				{/* tìm kiếm */}
-				<Box className='header__left__search'>
-					<TextField
-						id='search'
-						placeholder='Tìm kiếm sản phẩm ...'
-						variant='outlined'
-						size='small'
-						className='header__left__search__input'
-					/>
-
-					<i className='bx bx-search-alt header__left__search__icon'></i>
-				</Box>
+				<TextField
+					id='search'
+					placeholder='Tìm kiếm sản phẩm ...'
+					variant='outlined'
+					size='small'
+					InputProps={{
+						startAdornment: (
+							<InputAdornment position='start'>
+								<i className='bx bx-search-alt'></i>
+							</InputAdornment>
+						),
+					}}
+					className='header__left__search'
+				/>
 				{/* tìm kiếm */}
 			</Box>
 
