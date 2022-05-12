@@ -13,11 +13,11 @@ import {
 	Select,
 	Tab,
 	TextField,
-	Tooltip
+	Tooltip,
 } from '@mui/material'
 import { Editor } from '@tinymce/tinymce-react'
 import { Form, Formik } from 'formik'
-import { SyntheticEvent, useEffect, useState } from 'react'
+import { SyntheticEvent, useEffect, useRef, useState } from 'react'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import categoryApi from '../../../../api/categoryApi'
@@ -35,7 +35,7 @@ import { modalClose } from '../../../../slices/modalSlice'
 import {
 	uploadFileAdd,
 	uploadFileDel,
-	uploadFileReset
+	uploadFileReset,
 } from '../../../../slices/uploadFileSlice'
 import slugify from '../../../../utils/slugify'
 import CheckBoxField from '../../../common/CheckBoxField'
@@ -54,8 +54,9 @@ interface IAddOrEditProductModalProps {
 	product?: Product
 }
 
-const AddOrEditProductModal = ({product}: IAddOrEditProductModalProps) => {
+const AddOrEditProductModal = ({ product }: IAddOrEditProductModalProps) => {
 	const dispatch = useAppDispatch()
+	const editorRef: any = useRef(null)
 
 	const open = useAppSelector((state) => state.modal.onOpen)
 	const initFiles = useAppSelector((state) => state.uploadFile)
@@ -185,22 +186,22 @@ const AddOrEditProductModal = ({product}: IAddOrEditProductModalProps) => {
 	}
 
 	const initialValues: Product = {
-		name: '',
-		slug: '',
-		avatar: '',
-		priceImport: '',
-		price: '',
-		priceDiscount: '',
-		gift: '',
-		quantity: 0,
-		description: '',
-		installment: false,
-		new: false,
-		discount: false,
-		categoryId: '',
-		brandId: '',
-		userCreatedId: user?.id as string,
-		userUpdatedId: user?.id as string,
+		name: product ? product.name : '',
+		slug: product ? product.slug : '',
+		avatar: product ? product.avatar : '',
+		priceImport: product ? product.priceImport : '',
+		price: product ? product.price : '',
+		priceDiscount: product ? product.priceDiscount : '',
+		gift: product ? product.gift : '',
+		quantity: product ? product.quantity : 0,
+		description: product ? product.description : '',
+		installment: product ? product.installment : false,
+		new: product ? product.new : false,
+		discount: product ? product.discount : false,
+		categoryId: product ? product.categoryId : '',
+		brandId: product ? product.brandId : '',
+		userCreatedId: product ? product.userCreatedId : (user?.id as string),
+		userUpdatedId: product ? product.userUpdatedId : (user?.id as string),
 	}
 
 	const addOrEditProductSchema = Yup.object().shape({
@@ -594,15 +595,16 @@ const AddOrEditProductModal = ({product}: IAddOrEditProductModalProps) => {
 										Thông tin sản phẩm
 									</Box>
 									<Editor
+										onInit={(_evt, editor) => (editorRef.current = editor)}
 										apiKey='1gm4ec14ey357xtl0d0kgqq7wrgep8xwarpr5pmjbihmkvx7'
 										initialValue={''}
 										init={{
 											height: 500,
 											menubar: true,
 											plugins:
-												'emoticons hr image link media lists charmap table advlist autolink print preview anchor searchreplace visualblocks insertdatetime media paste wordcount',
+												'emoticons image link media lists charmap table advlist autolink preview anchor searchreplace visualblocks insertdatetime media wordcount',
 											toolbar:
-												'undo redo | styleselect | forecolor | formatselect |fontselect | fontsizeselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media| code | paste pastetext',
+												'undo redo | styleselect | forecolor | formatselect |fontselect | fontsizeselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media| code',
 											automatic_uploads: true,
 											file_picker_types: 'image media',
 											file_picker_callback: handleUpload,

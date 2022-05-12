@@ -1,83 +1,72 @@
 import { Box, Button, InputAdornment, TextField } from '@mui/material'
+import { useEffect, useState } from 'react'
+import productApi from '../../../../api/productApi'
 import { useAppDispatch, useAppSelector } from '../../../../app/hook'
-import { Column, Row } from '../../../../interfaces'
+import { Column, Product, Row } from '../../../../interfaces'
+import { modalOpen } from '../../../../slices/modalSlice'
 import TableData from '../../tableData/TableData'
 import AddOrEditProductModal from '../addOrEditProductModal/AddOrEditProductModal'
-import { modalOpen } from '../../../../slices/modalSlice'
-import './ProductTable.scss'
 import ViewProductModal from '../viewProductModal/ViewProductModal'
+import './ProductTable.scss'
 
 const ProductTable = () => {
 	const dispatch = useAppDispatch()
 	const onOpen = useAppSelector((state) => state.modal.onOpen)
 	const type = useAppSelector((state) => state.modal.type)
+	const page = useAppSelector((state) => state.pagination.page)
+	const limit = useAppSelector((state) => state.pagination.limit)
 
-	const userColumns: Column[] = [
+	const [totalProduct, setTotalProduct] = useState<number>(0)
+	const [productPaginations, setProductPaginations] = useState<Product[]>([])
+	const [productRows, setProductRows] = useState<Row[]>([])
+
+	const productColumns: Column[] = [
 		{ field: 'id', headerName: 'ID' },
-		{ field: 'fullname', headerName: 'Khách hàng' },
+		{ field: 'name', headerName: 'Tên sản phẩm' },
 		{
-			field: 'totalOrders',
-			headerName: 'Tổng số đơn hàng',
-			number: true,
+			field: 'avatar',
+			headerName: 'Ảnh đại diện',
 		},
 		{
-			field: 'totalSpending',
-			headerName: 'Tổng chi tiêu',
+			field: 'price',
+			headerName: 'Giá',
+		},
+		{
+			field: 'status',
+			headerName: 'Trạng thái',
 		},
 	]
 
-	const userRows: Row[] = [
-		{
-			id: '1',
-			fullname: 'Đậu Đức Toàn',
-			totalOrders: 35,
-			totalSpending: '$1,938',
-		},
-		{
-			id: '2',
-			fullname: 'Lannister',
-			totalOrders: 42,
-			totalSpending: '$1,838',
-		},
-		{
-			id: '3',
-			fullname: 'Lannister',
-			totalOrders: 45,
-			totalSpending: '$1,182',
-		},
-		{ id: '4', fullname: 'Stark', totalOrders: 16, totalSpending: '$836' },
-		{
-			id: '5',
-			fullname: 'Melisandre',
-			totalOrders: 150,
-			totalSpending: '$2,384',
-		},
-		{
-			id: '6',
-			fullname: 'Đậu Đức Toàn',
-			totalOrders: 35,
-			totalSpending: '$1,938',
-		},
-		{
-			id: '7',
-			fullname: 'Lannister',
-			totalOrders: 42,
-			totalSpending: '$1,838',
-		},
-		{
-			id: '8',
-			fullname: 'Lannister',
-			totalOrders: 45,
-			totalSpending: '$1,182',
-		},
-		{ id: '9', fullname: 'Stark', totalOrders: 16, totalSpending: '$836' },
-		{
-			id: '10',
-			fullname: 'Melisandre',
-			totalOrders: 150,
-			totalSpending: '$2,384',
-		},
-	]
+	useEffect(() => {
+		const getCount = async () => {
+			const total = await productApi.getCount()
+			setTotalProduct(total)
+		}
+		getCount()
+	}, [])
+
+	useEffect(() => {
+		const getProductByPagination = async () => {
+			const products = await productApi.getProductByPagination({ page, limit })
+			setProductPaginations(products)
+		}
+
+		getProductByPagination()
+	}, [page, limit])
+
+	useEffect(() => {
+		let rows: Row[] = []
+		for (let i = 0; i < productPaginations.length; i++) {
+			rows.push({
+				id: productPaginations[i].id as string,
+				name: productPaginations[i].name,
+				avatar: productPaginations[i].avatar,
+				price: productPaginations[i].price,
+				status: productPaginations[i].quantity > 0 ? 'còn hàng' : 'hết hàng',
+			})
+		}
+		setProductRows(rows)
+	}, [productPaginations, limit])
 
 	return (
 		<Box className='productTable'>
@@ -109,16 +98,17 @@ const ProductTable = () => {
 						variant='contained'
 						className='productTable__btn'
 						startIcon={<i className='bx bx-add-to-queue'></i>}
-						onClick={() => dispatch(modalOpen('add'))}>
+						onClick={() => dispatch(modalOpen({ type: 'add', data: '' }))}>
 						Thêm mới
 					</Button>
 				</Box>
 			</Box>
 			<TableData
 				size='small'
-				rows={userRows}
-				columns={userColumns}
+				rows={productRows}
+				columns={productColumns}
 				pagination
+				count={totalProduct}
 				onRowsPerPageChange
 				actions
 				viewComponent={<ViewProductModal />}

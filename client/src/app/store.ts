@@ -3,6 +3,7 @@ import authReducer from '../slices/authSlice'
 import callApiReducer from '../slices/callApiSlice'
 import modalReducer from '../slices/modalSlice'
 import uploadFileReducer from '../slices/uploadFileSlice'
+import paginationReducer from '../slices/paginatioSlice'
 // ...
 
 export const store = configureStore({
@@ -11,6 +12,7 @@ export const store = configureStore({
 		callApi: callApiReducer,
 		modal: modalReducer,
 		uploadFile: uploadFileReducer,
+		pagination: paginationReducer,
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware({

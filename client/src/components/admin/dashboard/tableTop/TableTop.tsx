@@ -126,14 +126,24 @@ const TableTop = () => {
 		<Box className='tableTop__admin'>
 			<Box className='tableTop__admin__table'>
 				<Box className='tableTop__admin__table__title'>Khách hàng nổi bật</Box>
-				<TableData size='small' rows={userRows} columns={userColumns} />
+				<TableData
+					size='small'
+					rows={userRows}
+					columns={userColumns}
+					count={userRows.length}
+				/>
 			</Box>
 
 			<Box className='tableTop__admin__table'>
 				<Box className='tableTop__admin__table__title'>
 					Đơn đặt hàng cuối cùng
 				</Box>
-				<TableData size='small' rows={orderRows} columns={orderColumns} />
+				<TableData
+					size='small'
+					rows={orderRows}
+					columns={orderColumns}
+					count={orderRows.length}
+				/>
 			</Box>
 		</Box>
 	)

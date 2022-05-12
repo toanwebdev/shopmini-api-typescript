@@ -6,6 +6,7 @@ interface ModalState {
 	isLoading: boolean
 	onOpen: boolean
 	type: 'view' | 'add' | 'edit' | 'delete'
+	data: any
 }
 
 // Define the initial state using that type
@@ -13,6 +14,7 @@ const initialState: ModalState = {
 	isLoading: false,
 	onOpen: false,
 	type: 'view',
+	data: '',
 }
 
 export const modalSlice = createSlice({
@@ -22,11 +24,15 @@ export const modalSlice = createSlice({
 	reducers: {
 		modalOpen: (
 			state,
-			action: PayloadAction<'view' | 'add' | 'edit' | 'delete'>,
+			action: PayloadAction<{
+				type: 'view' | 'add' | 'edit' | 'delete'
+				data: any
+			}>,
 		): void => {
 			state.isLoading = true
 			state.onOpen = true
-			state.type = action.payload
+			state.type = action.payload.type
+			state.data = action.payload.data
 		},
 		modalClose: (state) => {
 			state.isLoading = false

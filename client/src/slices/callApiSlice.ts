@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 // Define a type for the slice state
-interface AuthState {
+interface CallApiState {
 	isLoading: boolean
 }
 
 // Define the initial state using that type
-const initialState: AuthState = {
+const initialState: CallApiState = {
 	isLoading: false,
 }
 

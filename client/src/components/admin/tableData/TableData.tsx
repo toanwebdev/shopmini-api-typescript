@@ -15,11 +15,13 @@ import { ChangeEvent, MouseEvent, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hook'
 import { Column, Row } from '../../../interfaces'
 import { modalOpen } from '../../../slices/modalSlice'
+import { limitChange, pageChange } from '../../../slices/paginatioSlice'
 
 interface ITableDataProps {
 	size?: 'small' | 'medium'
 	rows: Row[]
 	columns: Column[]
+	count: number
 	pagination?: boolean
 	onRowsPerPageChange?: boolean
 	actions?: boolean
@@ -31,14 +33,17 @@ const TableData = ({
 	size,
 	rows,
 	columns,
+	count,
 	pagination,
 	onRowsPerPageChange,
 	actions,
 	viewComponent,
 	editComponent,
 }: ITableDataProps) => {
+	const limit = useAppSelector((state) => state.pagination.limit)
+
 	const [page, setPage] = useState(0)
-	const [rowsPerPage, setRowsPerPage] = useState(10)
+	const [rowsPerPage, setRowsPerPage] = useState(limit)
 
 	const dispatch = useAppDispatch()
 	const onOpen = useAppSelector((state) => state.modal.onOpen)
@@ -53,13 +58,16 @@ const TableData = ({
 		newPage: number,
 	) => {
 		setPage(newPage)
+		dispatch(pageChange(newPage))
 	}
 
 	const handleChangeRowsPerPage = (
 		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
-		setRowsPerPage(parseInt(event.target.value, 10))
+		setRowsPerPage(parseInt(event.target.value, limit))
+		dispatch(limitChange(parseInt(event.target.value)))
 		setPage(0)
+		dispatch(pageChange(0))
 	}
 
 	return (
@@ -96,7 +104,9 @@ const TableData = ({
 									<Tooltip title='Xem chi tiết'>
 										<IconButton
 											color='info'
-											onClick={() => dispatch(modalOpen('view'))}>
+											onClick={() =>
+												dispatch(modalOpen({ type: 'view', data: row }))
+											}>
 											<i className='bx bx-message-square-detail'></i>
 										</IconButton>
 									</Tooltip>
@@ -104,7 +114,9 @@ const TableData = ({
 									<Tooltip title='Chỉnh sửa'>
 										<IconButton
 											color='warning'
-											onClick={() => dispatch(modalOpen('edit'))}>
+											onClick={() =>
+												dispatch(modalOpen({ type: 'edit', data: row }))
+											}>
 											<i className='bx bx-edit-alt'></i>
 										</IconButton>
 									</Tooltip>
@@ -129,10 +141,17 @@ const TableData = ({
 					<TableFooter>
 						<TableRow>
 							<TablePagination
-								rowsPerPageOptions={[10, 20, 30, { label: 'All', value: -1 }]}
+								rowsPerPageOptions={[
+									2,
+									4,
+									6,
+									8,
+									10,
+									{ label: 'All', value: -1 },
+								]}
 								labelRowsPerPage='Số hàng trên trang'
 								colSpan={99}
-								count={rows.length}
+								count={count}
 								rowsPerPage={rowsPerPage}
 								page={page}
 								SelectProps={{
